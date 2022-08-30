@@ -1,2 +1,4 @@
-[default.databases.sqlx]
-url = "postgres://postgres:123456@localhost:5432/drug"
+[default.databases.postgres]
+url = "postgres://postgres:123456@localhost:5432/postgres"
+
+idle_timeout = 120

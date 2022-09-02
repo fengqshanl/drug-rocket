@@ -1,0 +1,4 @@
+[default.databases.postgrestest]
+url = "postgres://test0:123456@localhost/postgrestest"
+
+idle_timeout = 120

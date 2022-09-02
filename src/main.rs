@@ -1,11 +1,7 @@
 #[macro_use] extern crate rocket;
-#[macro_use] extern crate rocket_sync_db_pools;
-#[macro_use] extern crate diesel_migrations;
-#[macro_use] extern crate diesel;
-
 use rocket_db_pools::{Database};
 use rocket_db_pools::sqlx::{self};
-use drug::{add::read};
+use drug::{view::read, add::add};
 
 mod drug;
 
@@ -17,5 +13,5 @@ pub struct Drug(sqlx::PgPool);
 fn rocket() -> _ {
     rocket::build()
         .attach(Drug::init())
-        .mount("/", routes![read])
+        .mount("/drug", routes![read, add])
 }
